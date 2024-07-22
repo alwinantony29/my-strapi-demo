@@ -4,7 +4,8 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article"
+    "displayName": "Article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,6 +17,21 @@
     },
     "title": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "app": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::app.app",
+      "inversedBy": "articles"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "articles"
     }
   }
 }
